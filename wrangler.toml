@@ -2,6 +2,7 @@ name = "cloudflare-email-forwarder-worker"
 main = "src/index.ts"
 compatibility_date = "2026-02-24"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = false
 
 [observability]
 enabled = false
