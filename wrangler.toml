@@ -1,0 +1,12 @@
+name = "cloudflare-email-forwarder-worker"
+main = "src/index.ts"
+compatibility_date = "2026-02-24"
+compatibility_flags = ["nodejs_compat"]
+
+# KV namespace binding is set via the Cloudflare dashboard:
+# Workers & Pages → your worker → Settings → KV Namespace Bindings → Add binding
+# Variable name: ALLOWED_ALIASES  |  KV namespace: (select your namespace)
+
+# FORWARD_TO is set as an environment variable via the Cloudflare dashboard:
+# Workers & Pages → your worker → Settings → Variables and Secrets → Add variable
+# Name: FORWARD_TO  |  Value: you@example.com
