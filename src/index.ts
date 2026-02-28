@@ -6,6 +6,10 @@ export interface Env {
 }
 
 export default {
+  async fetch(): Promise<Response> {
+    return new Response("This worker only handles email.", { status: 200 });
+  },
+
   async email(message: ForwardableEmailMessage, env: Env): Promise<void> {
     const alias = message.to.toLowerCase().trim();
 
