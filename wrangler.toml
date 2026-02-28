@@ -3,6 +3,7 @@ main = "src/index.ts"
 compatibility_date = "2026-02-24"
 compatibility_flags = ["nodejs_compat"]
 workers_dev = false
+keep_vars = true
 
 # KV namespace binding — find the ID in Workers & Pages → KV → your namespace
 [[kv_namespaces]]
