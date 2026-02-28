@@ -3,6 +3,21 @@ main = "src/index.ts"
 compatibility_date = "2026-02-24"
 compatibility_flags = ["nodejs_compat"]
 
+[observability]
+enabled = false
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+persist = true
+invocation_logs = true
+
+[observability.traces]
+enabled = false
+head_sampling_rate = 1
+persist = true
+
 # KV namespace binding is set via the Cloudflare dashboard:
 # Workers & Pages → your worker → Settings → KV Namespace Bindings → Add binding
 # Variable name: ALLOWED_ALIASES  |  KV namespace: (select your namespace)
