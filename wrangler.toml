@@ -4,6 +4,11 @@ compatibility_date = "2026-02-24"
 compatibility_flags = ["nodejs_compat"]
 workers_dev = false
 
+# KV namespace binding — find the ID in Workers & Pages → KV → your namespace
+[[kv_namespaces]]
+binding = "ALLOWED_ALIASES"
+id = "c980f7b4526e48b68af5e950ab2f7798" # replace this
+
 [observability]
 enabled = false
 head_sampling_rate = 1

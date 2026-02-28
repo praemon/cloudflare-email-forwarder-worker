@@ -22,7 +22,7 @@ export default {
       console.log(`[forward] ${alias} → ${env.FORWARD_TO}`);
     } else {
       // Alias is not recognised — drop the message.
-      message.setReject(`Address ${alias} is not an active alias.`);
+      message.setReject(`550 5.1.1 The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces.`);
       console.log(`[drop] ${alias} is not an allowed alias`);
     }
   },
