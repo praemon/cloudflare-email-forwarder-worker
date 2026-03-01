@@ -5,10 +5,15 @@ compatibility_flags = ["nodejs_compat"]
 workers_dev = false
 keep_vars = true
 
-# KV namespace binding — find the ID in Workers & Pages → KV → your namespace
-[[kv_namespaces]]
-binding = "ALLOWED_ALIASES"
-id = "c980f7b4526e48b68af5e950ab2f7798" # replace this
+# ──────────────────────────────────────────────────────────────────────────────
+# KV Namespace — set in the Cloudflare dashboard (not here, so it is never
+# overwritten by a wrangler deploy):
+#   Workers & Pages → your worker → Settings → KV Namespace Bindings
+#   Variable name : ALLOWED_ALIASES
+#   KV namespace  : (select your namespace)
+#
+# Must be the SAME namespace that the simplelogin-api worker writes to.
+# ──────────────────────────────────────────────────────────────────────────────
 
 [observability]
 enabled = false
@@ -25,10 +30,8 @@ enabled = false
 head_sampling_rate = 1
 persist = true
 
-# KV namespace binding is set via the Cloudflare dashboard:
-# Workers & Pages → your worker → Settings → KV Namespace Bindings → Add binding
-# Variable name: ALLOWED_ALIASES  |  KV namespace: (select your namespace)
-
-# FORWARD_TO is set as an environment variable via the Cloudflare dashboard:
-# Workers & Pages → your worker → Settings → Variables and Secrets → Add variable
-# Name: FORWARD_TO  |  Value: you@example.com
+# ──────────────────────────────────────────────────────────────────────────────
+# FORWARD_TO — set in the Cloudflare dashboard:
+#   Workers & Pages → your worker → Settings → Variables and Secrets
+#   Name: FORWARD_TO  |  Value: you@example.com
+# ──────────────────────────────────────────────────────────────────────────────
